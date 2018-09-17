@@ -103,6 +103,18 @@ object DataProcessing {
     refinedInputDF.show()
 
 
+    // Perform the split on the data-set
+    val seed: Long = 8657L
+    val splits = refinedInputDF.randomSplit(Array(0.85, 0.15), seed)
 
+    // Training Set
+    val trainingSet = splits(0)
+
+    trainingSet.show()
+
+    // Create the testing set
+    val testingSet = splits(1)
+
+    testingSet.show()
   }
 }
