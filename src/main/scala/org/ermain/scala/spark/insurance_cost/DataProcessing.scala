@@ -32,5 +32,15 @@ object DataProcessing {
     inputData.groupBy("region")
       .sum("charges")
       .show()
+
+
+    inputData.groupBy("children")
+      .sum("charges")
+      .show()
+
+    val refinedInputDF = inputData
+      .drop("age")
+
+    refinedInputDF.show()
   }
 }
