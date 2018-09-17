@@ -5,7 +5,6 @@ import org.ermain.scala.spark.insurance_cost.InsuranceClaims.{Customer, schema}
 
 object DataProcessing {
 
-  def main(args: Array[String]): Unit = {
     // Create the spark session
     val spark: SparkSession = SparkSessionCreate.createSession()
 
@@ -102,6 +101,7 @@ object DataProcessing {
 
     refinedInputDF.show()
 
+    println("Splitting Dataset into training and testing set....")
 
     // Perform the split on the data-set
     val seed: Long = 8657L
@@ -109,12 +109,9 @@ object DataProcessing {
 
     // Training Set
     val trainingSet = splits(0)
-
-    trainingSet.show()
+    //trainingSet.show()
 
     // Create the testing set
     val testingSet = splits(1)
-
-    testingSet.show()
-  }
+    //testingSet.show()
 }
