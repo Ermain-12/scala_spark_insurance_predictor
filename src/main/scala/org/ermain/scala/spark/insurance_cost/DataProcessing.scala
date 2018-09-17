@@ -32,7 +32,7 @@ object DataProcessing {
      */
     println("Showing charges by sex")
     inputData.groupBy("sex")
-      .sum("charges")
+      .sum("label")
       .show()
 
     /*
@@ -51,7 +51,7 @@ object DataProcessing {
 
     println("Showing charges by region....")
     inputData.groupBy("region")
-      .sum("charges")
+      .sum("label")
       .show()
 
 
@@ -69,7 +69,7 @@ object DataProcessing {
                 +--------+------------------+
      */
     inputData.groupBy("children")
-      .sum("charges")
+      .sum("label")
       .show()
 
     /*
@@ -86,12 +86,12 @@ object DataProcessing {
             the claim amounts of non-smokers and smoker
     */
     inputData.groupBy("smoker")
-      .sum("charges")
+      .sum("label")
       .show()
 
 
     inputData.groupBy("bmi")
-      .sum("charges")
+      .sum("label")
       .show()
 
     val refinedInputDF = inputData
@@ -109,6 +109,7 @@ object DataProcessing {
 
     // Training Set
     val trainingSet = splits(0)
+
     //trainingSet.show()
 
     // Create the testing set

@@ -11,7 +11,7 @@ object InsuranceClaims {
                      children: Integer,
                      smoker: String,
                      region: String,
-                     charges: Double
+                     label: Double
                      )
 
   val schema = StructType(
@@ -22,7 +22,7 @@ object InsuranceClaims {
       StructField("children", IntegerType, true),
       StructField("smoker", StringType, true),
       StructField("region", StringType, true),
-      StructField("charges", DoubleType, true)
+      StructField("label", DoubleType, true)
     )
   )
 }
