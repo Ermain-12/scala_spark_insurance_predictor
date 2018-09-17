@@ -90,8 +90,15 @@ object DataProcessing {
       .sum("charges")
       .show()
 
+
+    inputData.groupBy("bmi")
+      .sum("charges")
+      .show()
+
     val refinedInputDF = inputData
       .drop("age")
+      .drop("sex")
+
 
     refinedInputDF.show()
 
