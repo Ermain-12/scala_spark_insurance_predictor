@@ -5,11 +5,11 @@ import org.apache.spark.sql.types._
 object InsuranceClaims {
 
   case class Customer(
-                     age: String,
+                     age: Int,
                      sex: String,
                      bmi: Double,
                      children: Integer,
-                     smoker: Boolean,
+                     smoker: String,
                      region: String,
                      charges: Double
                      )

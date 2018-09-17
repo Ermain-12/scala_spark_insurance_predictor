@@ -38,9 +38,29 @@ object DataProcessing {
       .sum("charges")
       .show()
 
+    /*
+    // Determine the kind of relationship between the individual being a smoker
+    // and the claims made
+                  +------+-----------------+
+                  |smoker|     sum(charges)|
+                  +------+-----------------+
+                  |  null|             null|
+                  |    no|8974061.468918996|
+                  |   yes|    8781763.52184|
+                  +------+-----------------+
+            There, does not seem to be any relation, as there is some balance when comparing
+            the claim amounts of non-smokers and smoker
+    */
+    inputData.groupBy("smoker")
+      .sum("charges")
+      .show()
+
     val refinedInputDF = inputData
       .drop("age")
 
     refinedInputDF.show()
+
+
+
   }
 }
